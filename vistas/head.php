@@ -9,6 +9,9 @@
 <body>
 <td> <a href=index.php?controlador=index&accion=index>INICIO</a></td>
 <td> - </td>
+<td> - </td>
+<td> <a href=index.php?controlador=usuario&accion=index>Usuarios</a></td>
+<td> - </td>
 <td> <a href=index.php?controlador=items&accion=index>LISTADO-index</a></td>
 <td> - </td>
 <td> <a href=index.php?controlador=items&accion=listar>LISTADO-listado</a></td>

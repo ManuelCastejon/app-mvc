@@ -1,13 +1,23 @@
 
 <?php include __DIR__ . '/../head.php';?>
 <?php include __DIR__ . '/../menu.php';?>
- 
-<table>    
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    <h1><?php echo $datos['titulo'] ?></h1>
+    </div>
      
-    <tr>
-        <h1><?php echo $datos['titulo'] ?></h1>
-        <p><?php echo $datos['texto'] ?></p>
-    </tr>    
+    <div class="col-sm">
+    <p><?php echo $datos['texto'] ?></p>
+    </div>
+  </div>
+</div>
+       
+            
+            
+       
+            
+     
  
-    
 <?php include __DIR__ . '/../footer.php';?>

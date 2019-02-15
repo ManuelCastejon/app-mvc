@@ -12,20 +12,21 @@
     <p><?php echo $datos['texto'] ?></p>
   
 
-    <form action="/action_page.php">
+<form action="http://localhost/app-minishop/index.php?controlador=categoria&accion=insertar" method="POST" role="form" class="form-horizontal">
+<div class="form-group">
+    <label for="exampleFormControlInput1">Nombre</label>
+    <input type="text" name="Nombre" class="form-control" id="Nombre" placeholder="Nombre">
+  </div> 
+   
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+    <label for="exampleFormControlTextarea1">Descripción</label>
+    <textarea class="form-control" name="Descripcion" id="exampleFormControlTextarea1" placeholder="Descripción.." rows="3"></textarea>
+  </div> 
+
+<button type="submit" class="btn btn-default">Enviar</button>
 </form>
+
+
 
 </div>
   </div>

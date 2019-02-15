@@ -64,6 +64,8 @@ class CategoriaController
     // insertar ( obtiene los datos del Form POST )
     public function insertar(){
     
+ 
+
         if(isset($_POST['Nombre']) & isset($_POST['Descripcion']))
         {        
             // se envía con el formulario

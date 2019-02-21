@@ -16,8 +16,8 @@
           <div class="flex-parent">
 
             <!-- Search form -->
-            <form role="search" method="get" class="nav__search-form">
-              <input type="search" class="nav__search-input" id="nav__search-input" placeholder="Texto a buscar..">
+            <form role="search" action="index.php?controlador=index&accion=buscar" method="post" class="nav__search-form">
+              <input type="search" name="texto" class="nav__search-input" id="nav__search-input" placeholder="Texto a buscar..">
               <i class="ui-close nav__search-close" id="nav__search-close"></i>
             </form>
 
@@ -73,7 +73,7 @@
 
               <!-- Mobile Search -->
               <div class="nav__search-mobile d-lg-none">
-                <form role="search" method="get" class="search-form relative">
+                <form role="search" action="index.php?controlador=index&accion=buscar" method="get" class="search-form relative">
                   <input type="search" class="search-input" placeholder="Search" />
                   <button type="submit" class="search-button" aria-label="search button"><i class="ui-search search-icon"></i></button>
                 </form>

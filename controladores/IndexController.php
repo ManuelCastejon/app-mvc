@@ -63,6 +63,25 @@ public function enviar(){
     }       
 }
 
+//Mostramos un Formulario de contacto
+public function buscar(){
+    // index.php?controlador=index&accion=buscar   
+    if(isset($_REQUEST['texto']))
+    {
+        $texto = $_REQUEST['texto'];
+
+       $index['titulo'] = "Buscando..";
+       $index['texto'] = "Buscando el texto $texto...";
+
+        //Pasamos a la vista toda la información que se desea representar
+        $data['datos'] = $index;
+       //Finalmente presentamos nuestra plantilla         
+       $this->view->show("index.php", $data); 
+       
+   }
+}
+
+
      
 }
 ?>

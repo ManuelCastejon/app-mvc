@@ -19,6 +19,7 @@ class CategoriaController
         //Finalmente presentamos nuestra plantilla         
         $this->view->show("categorias/listado.php", $data);        
     }
+
     // accede al detalle de una Categoría
     public function detalle(){
     // index.php?controlador=categoria&accion=detalle&id=33       
@@ -44,10 +45,6 @@ class CategoriaController
         $this->view->show("categorias/detalle.php", $data);        
     }
 
-
-
-
-
     // crear ( muestra un FORUMULARIO )
     public function crear(){
     // index.php?controlador=categoria&accion=crear
@@ -58,9 +55,7 @@ class CategoriaController
          $data['datos'] = $index;
         //Finalmente presentamos nuestra plantilla         
         $this->view->show("categorias/crear.php", $data);        
-    }
-
-    
+    }   
 
 
     // insertar ( obtiene los datos del Form POST )
@@ -81,7 +76,6 @@ class CategoriaController
             $this->view->show("categorias/insertado.php", $data); 
         }       
     }
-
    
     
     // eliminar

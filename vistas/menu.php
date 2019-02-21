@@ -17,13 +17,13 @@
 
             <!-- Search form -->
             <form role="search" method="get" class="nav__search-form">
-              <input type="search" class="nav__search-input" id="nav__search-input" placeholder="Type &amp; Hit Enter">
+              <input type="search" class="nav__search-input" id="nav__search-input" placeholder="Texto a buscar..">
               <i class="ui-close nav__search-close" id="nav__search-close"></i>
             </form>
 
             <div class="nav__header">
               <!-- Logo -->
-              <a href="index.html" class="logo-container">
+              <a href="index.php" class="logo-container">
                 <img class="logo" src="vistas/img/logo.png" srcset="vistas/img/logo.png 1x, vistas/img/logo@2x.png 2x" alt="logo">
               </a>
 
@@ -58,32 +58,10 @@
                     <li><a href="index.php?controlador=articulo&accion=crear">Crear</a></li>                           
                   </ul>
                 </li>
-                <li class="nav__dropdown">
-                  <a href="blog.html" aria-haspopup="true">Features</a>
-                  <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="icons.html">Icons</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                  </ul>
-                </li>
-                <li class="nav__dropdown">
-                  <a href="blog.html" aria-haspopup="true">Blog</a>
-                  <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-                  <ul class="nav__dropdown-menu">
-                    <li><a href="blog.html">Blog Standard</a></li>
-                    <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                    <li class="nav__dropdown">
-                      <a href="single-post-1.html" aria-haspopup="true">Single Post</a>
-                      <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
-                      <ul class="nav__dropdown-menu">
-                        <li><a href="single-post-1.html">Fullwidth</a></li>
-                        <li><a href="single-post-2.html">With Sidebar</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
+                 
+                 
                 <li>
-                  <a href="#">Purchase</a>
+                  <a href="index.php?controlador=index&accion=contacto">Contacto</a>
                 </li>
               </ul> <!-- end menu -->
 

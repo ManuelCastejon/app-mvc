@@ -7,10 +7,15 @@ class SPDO extends PDO
  
     public function __construct()
     {
+        // recupero la información almacenada en la RAM sobre 
+        // la configuración
         $config = Config::singleton();
 
         try 
         {
+            // ejecuto el constructor de PDO con los datos de la config
+            // para establecer la conexión a la BASE DE DATOS
+            
             $this->db = parent::__construct('mysql:host=' . $config->get('dbhost') . ';dbname=' . $config->get('dbname'),
             $config->get('dbuser'), $config->get('dbpass'));
         }

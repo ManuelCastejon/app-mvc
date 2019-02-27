@@ -16,6 +16,22 @@ class CategoriaController
         $index['texto'] = "Estas en la página de Listado de Categoria";
          //Pasamos a la vista toda la información que se desea representar
          $data['datos'] = $index;
+
+         // consulta al Modelo Categoria sobre el Listado De Todas las categorías
+
+        include __DIR__ . '/../modelos/CategoriaModel.php';
+        
+        // creamos un objeto del modelo CATEGORIA
+        $listado = new CategoriaModel();
+        // ejecutamos la función de CONSULTA a la BD
+        $listado_categoria = $listado->listadoTotal();
+
+        // le pasamos el resultado a la VISTA
+        $data['listado_categoria'] = $listado_categoria;   
+
+
+
+
         //Finalmente presentamos nuestra plantilla         
         $this->view->show("categorias/listado.php", $data);        
     }

@@ -28,7 +28,7 @@
     {
     ?>
     <tr>
-    <td><?php echo $categoria['idCategoria']?></td>
+    <td><a href=index.php?controlador=categoria&accion=detalle&id=<?php echo $categoria['idCategoria']?>><?php echo $categoria['idCategoria']?></a></td>
         <td><?php echo $categoria['Nombre']?></td>
         <td><?php echo $categoria['Fecha']?></td>
         <td><?php echo $categoria['Autor']?></td>

@@ -14,10 +14,19 @@
     </div>
     <div class="col-sm">
     
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Autor</th>
+        <th>Estado</th>
+    </tr>
+
     <?php // Extraer TODAS las FILAS de la tabla USUARIO
     while($usuario = $listado_usuarios->fetch())
     {
-    ?><table>
+    ?> 
     <tr>  <?php //Imprime el valor de todas las COLUMNAS ?>
         <td><?php echo $usuario['idUsuario']?></td>
         <td><?php echo $usuario['Nombre']?></td>
@@ -25,10 +34,11 @@
         <td><?php echo $usuario['Email']?></td>
         <td><?php echo $usuario['Estado']?></td>
     </tr>
-    </table>
+   
     <?php
     }
     ?>
+     </table>
     </div>
   </div>
 </div>    

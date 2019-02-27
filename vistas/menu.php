@@ -58,6 +58,14 @@
                     <li><a href="index.php?controlador=articulo&accion=crear">Crear</a></li>                           
                   </ul>
                 </li>
+
+                <li class="nav__dropdown">
+                  <a href="index.php?controlador=usuario&accion=listado" aria-haspopup="true">Usuarios</a>
+                  <i class="ui-arrow-down nav__dropdown-trigger" role="button" aria-haspopup="true" aria-expanded="false"></i>
+                  <ul class="nav__dropdown-menu">
+                    <li><a href="index.php?controlador=usuario&accion=crear">Crear</a></li>                           
+                  </ul>
+                </li>
                  
                  
                 <li>

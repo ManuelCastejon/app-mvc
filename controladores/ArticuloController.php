@@ -19,7 +19,7 @@ class ArticuloController
         //Finalmente presentamos nuestra plantilla         
         $this->view->show("articulos/listado.php", $data);        
     }
-    
+
     // accede al detalle del Artículo
     public function detalle(){
     // index.php?controlador=articulo&accion=detalle&id=33     
@@ -52,7 +52,7 @@ class ArticuloController
     // crear ( muestra un FORUMULARIO ) 
     public function crear(){
     // index.php?controlador=articulo&accion=crear
-        //Guardamos en un array los datos a mostrar en la vista
+    //Guardamos en un array los datos a mostrar en la vista
         $index['titulo'] = "Artículo/Crear";
         $index['texto'] = "Estas en la página de Crear una Artículo";
          //Pasamos a la vista toda la información que se desea representar

@@ -22,5 +22,18 @@ class CategoriaModel
         //devolvemos la colección para que la vista la presente.
         return $consulta;
     }
+
+
+    public function detalle($id_categoria)
+    {
+        //realizamos la consulta de la Categoría con ID pasada como parámetro
+        $consulta = $this->db->prepare('SELECT * FROM categorias WHERE idCategoria = :id');
+        $consulta->execute(['id' => $id_categoria]);
+
+        $consulta->execute();
+        //devolvemos la colección para que la vista la presente.
+        return $consulta;
+    }
+
 }
 ?>

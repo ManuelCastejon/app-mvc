@@ -17,8 +17,7 @@ class CategoriaController
          //Pasamos a la vista toda la información que se desea representar
          $data['datos'] = $index;
 
-         // consulta al Modelo Categoria sobre el Listado De Todas las categorías
-
+        // consulta al Modelo Categoria sobre el Listado De Todas las categorías
         include __DIR__ . '/../modelos/CategoriaModel.php';
         
         // creamos un objeto del modelo CATEGORIA
@@ -48,6 +47,19 @@ class CategoriaController
             //Pasamos a la vista toda la información que se desea representar
             $data['datos'] = $index;
             //Finalmente presentamos nuestra plantilla
+
+            // consulta al Modelo Categoria sobre el Listado De Todas las categorías
+            include __DIR__ . '/../modelos/CategoriaModel.php';
+            
+            // creamos un objeto del modelo CATEGORIA
+            $listado = new CategoriaModel();
+            // ejecutamos la función de CONSULTA a la BD
+            $detalle_categoria = $listado->detalle($id);
+
+            // le pasamos el resultado a la VISTA
+            $data['detalle_categoria'] = $detalle_categoria;   
+
+            //
         }
         else
         {

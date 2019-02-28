@@ -1,5 +1,9 @@
 <?php
 
+// consulta al Modelo Artículos sobre el Listado De Todas los artículos
+include __DIR__ . '/../modelos/ArticuloModel.php';
+
+
 class ArticuloController
 {
     function __construct()
@@ -14,10 +18,22 @@ class ArticuloController
         //Guardamos en un array los datos a mostrar en la vista
         $index['titulo'] = "Articulo/Listado";
         $index['texto'] = "Estas en la página de Listado de Articulo";
-         //Pasamos a la vista toda la información que se desea representar
-         $data['datos'] = $index;
+        //Pasamos a la vista toda la información que se desea representar
+        $data['datos'] = $index;
+
+        // creamos un objeto del modelo ARTÍCULO
+        $articulos = new ArticuloModel();
+
+        // ejecutamos la función de CONSULTA a la BD
+        $listado_articulos = $articulos->listadoTotal();
+
+        // le pasamos el resultado a la VISTA
+        $data['listado_articulos'] = $listado_articulos;     
+                
+        
         //Finalmente presentamos nuestra plantilla         
-        $this->view->show("articulos/listado.php", $data);        
+        $this->view->show("articulos/listado.php", $data); 
+            
     }
 
     // accede al detalle del Artículo

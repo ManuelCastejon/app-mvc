@@ -18,8 +18,8 @@ class CategoriaController
         //Guardamos en un array los datos a mostrar en la vista
         $index['titulo'] = "Categoria/Listado";
         $index['texto'] = "Estas en la página de Listado de Categoria";
-         //Pasamos a la vista toda la información que se desea representar
-         $data['datos'] = $index;
+        //Pasamos a la vista toda la información que se desea representar
+        $data['datos'] = $index;
 
           
         // creamos un objeto del modelo CATEGORIA

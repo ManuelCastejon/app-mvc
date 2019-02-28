@@ -24,11 +24,11 @@ class ArticuloModel
     }
 
 
-    public function detalle($id_categoria)
+    public function detalle($id_articulo)
     {
         //realizamos la consulta de la Categoría con ID pasada como parámetro
-        $consulta = $this->db->prepare('SELECT * FROM categorias WHERE idCategoria = :id');
-        $consulta->execute(['id' => $id_categoria]);
+        $consulta = $this->db->prepare('SELECT * FROM articulos WHERE idArticulo = :id');
+        $consulta->execute(['id' => $id_articulo]);
 
         $consulta->execute();
         //devolvemos la colección para que la vista la presente.

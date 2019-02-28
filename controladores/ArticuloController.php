@@ -48,6 +48,15 @@ class ArticuloController
             //Pasamos a la vista toda la información que se desea representar
             $data['datos'] = $index;
             //Finalmente presentamos nuestra plantilla
+
+            // creamos un objeto del modelo CATEGORIA
+            $listado = new ArticuloModel();
+            // ejecutamos la función de CONSULTA a la BD
+            $detalle_articulo = $listado->detalle($id);
+
+            // le pasamos el resultado a la VISTA
+            $data['detalle_articulo'] = $detalle_articulo;
+
         }
         else
         {

@@ -90,16 +90,32 @@ class CategoriaController
     public function insertar(){ 
     // index.php?controlador=categoria&accion=insertar desde el FORM
 
-        if(isset($_POST['Nombre']) & isset($_POST['Descripcion']))
+        if(isset($_POST['Nombre']))
         {        
             // se envía con el formulario
             $nombre = $_POST['Nombre'];
-            $descripcion = $_POST['Descripcion'];
+            $fecha = $_POST['Fecha'];
             //Guardamos en un array los datos a mostrar en la vista
             $index['titulo'] = "Categoria/Insertar";
-            $index['texto'] = "Gracias $nombre por contactar con nosotros con su mensaje $descripcion.";
+            $index['texto'] = "Gracias $nombre por contactar con nosotros con su mensaje en la fecha $fecha.";
+            
+
+            // insertar los datos!!!! 
+            // creamos un objeto del modelo CATEGORIA
+            $categoria = new CategoriaModel();
+            // ejecutamos la función de CONSULTA a la BD
+             
+           $NUEVO_ID_CAT = $categoria->insertar($_POST);
+
+           
+
+            // le pasamos el resultado a la VISTA
+            $index['resultado_insert_categoria'] = $NUEVO_ID_CAT;  
+
             //Pasamos a la vista toda la información que se desea representar
             $data['datos'] = $index;
+
+
             //Finalmente presentamos nuestra plantilla         
             $this->view->show("categorias/insertado.php", $data); 
         }       

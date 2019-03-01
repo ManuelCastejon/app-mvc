@@ -13,7 +13,7 @@
     <p><?php echo $datos['texto'] ?></p>
     </div>
     <div class="col-sm">
-    &nbsp;
+    Insertado la categoría con ID = <?php echo $datos['resultado_insert_categoria'] ?> Correctamente!!! 
     </div>
   </div>
 </div>    

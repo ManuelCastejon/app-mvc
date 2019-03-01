@@ -35,5 +35,25 @@ class CategoriaModel
         return $consulta;
     }
 
+
+    public function insertar($arrayPOST)
+    {
+        
+        // realizamos un insert de los parámetros
+        
+
+        $sql = "INSERT INTO categorias SET Nombre=:Nombre, Fecha=:Fecha, Autor=:Autor";
+        $status = $this->db->prepare($sql)->execute($arrayPOST);
+       
+        if ($status) {
+            $lastId = $this->db->lastInsertId();       
+        }           
+         
+        //devolvemos la colección para que la vista la presente.
+        return $lastId;
+    }
+
+
+
 }
 ?>

@@ -17,11 +17,17 @@
     <label for="exampleFormControlInput1">Nombre</label>
     <input type="text" name="Nombre" class="form-control" id="Nombre" placeholder="Nombre">
   </div> 
-   
+
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Descripción</label>
-    <textarea class="form-control" name="Descripcion" id="exampleFormControlTextarea1" placeholder="Descripción.." rows="3"></textarea>
+    <label for="exampleFormControlInput1">Fecha</label>
+    <input type="text" name="Fecha" class="form-control" id="Fecha" placeholder="Fecha">
   </div> 
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Autor</label>
+    <input type="text" name="Autor" class="form-control" id="Autor" placeholder="Autor">
+  </div>   
+
 
 <button type="submit" class="btn btn-default">Enviar</button>
 </form>

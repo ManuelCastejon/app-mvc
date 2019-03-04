@@ -141,7 +141,76 @@ class CategoriaController
  
 
  
+ // Editar ( Muestro un Formulario con los Datos del Registro SQL)
+    
+    public function editar(){
+        // index.php?controlador=categoria&accion=editar&id=33       
+            if(isset($_GET['id']))
+            {    
+                $id = $_GET['id'];    
+                //Guardamos en un array los datos a mostrar en la vista
+                $index['titulo'] = "Categoria/Editar";
+                $index['texto'] = "Estas en la página de Editar la Categoria id $id";
+                //Pasamos a la vista toda la información que se desea representar
+                $data['datos'] = $index;
+                //Finalmente presentamos nuestra plantilla
+    
+                     
+                // creamos un objeto del modelo CATEGORIA
+                $listado = new CategoriaModel();
+                // ejecutamos la función de CONSULTA a la BD
+                $detalle_categoria = $listado->detalle($id);
+    
+                // le pasamos el resultado a la VISTA
+                $data['detalle_categoria'] = $detalle_categoria;   
+    
+                //
+            }
+            else
+            {
+                //Guardamos en un array los datos a mostrar en la vista
+                $index['titulo'] = "Categoria/Detalle";
+                $index['texto'] = "Error.. Categoría no encontrada";
+                //Pasamos a la vista toda la información que se desea representar
+                $data['datos'] = $index;  
+    
+            }         
+            $this->view->show("categorias/editar.php", $data);        
+        }
+
+
+
+
+          // actualizar ( obtiene los datos del Form POST y actualiza el registro en la SQL)
+    public function actualizar(){ 
+        // index.php?controlador=categoria&accion=actualizar desde el FORM
+    
+            if(isset($_POST['Nombre']))
+            {                
+                //Guardamos en un array los datos a mostrar en la vista
+                $index['titulo'] = "Categoria/Actualizado";
+                $index['texto'] = "Se ha actualizado correctamente.";
+                
+    
+                // actualizar los datos!!!! 
+                // creamos un objeto del modelo CATEGORIA
+                $categoria = new CategoriaModel();
  
-     
+               // le pasamos todos los datos del FORM al modelo para ACTUALIZAR  
+               $status_actualizacion = $categoria->actualizar($_POST);   
+               
+    
+                // le pasamos el resultado a la VISTA
+                $index['resultado_insert_categoria'] = $status_actualizacion;  
+    
+                //Pasamos a la vista toda la información que se desea representar
+                $data['datos'] = $index;
+    
+    
+                //Finalmente presentamos nuestra plantilla         
+                $this->view->show("categorias/insertado.php", $data); 
+            }       
+        }
+    
 }
 ?>

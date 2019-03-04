@@ -53,5 +53,19 @@ class CategoriaModel
 
 
 
+    public function actualizar($arrayPOST)
+    {        
+        // realizamos un insert de los parámetros        
+        // UPDATE users SET username=:username, email=:email WHERE id=:id
+        $sql = "UPDATE categorias SET Nombre=:Nombre, Fecha=:Fecha, Autor=:Autor WHERE idCategoria=:idCategoria";
+        $status = $this->db->prepare($sql)->execute($arrayPOST);      
+                
+         
+        //devolvemos la colección para que la vista la presente.
+        return $status;
+    }
+
+
+
 }
 ?>

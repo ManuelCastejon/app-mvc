@@ -37,10 +37,8 @@ class CategoriaModel
 
 
     public function insertar($arrayPOST)
-    {
-        
-        // realizamos un insert de los parámetros
-        
+    {        
+        // realizamos un insert de los parámetros        
 
         $sql = "INSERT INTO categorias SET Nombre=:Nombre, Fecha=:Fecha, Autor=:Autor";
         $status = $this->db->prepare($sql)->execute($arrayPOST);

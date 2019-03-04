@@ -21,6 +21,8 @@
         <th>Fecha</th>
         <th>Autor</th>
         <th>Estado</th>
+        <th> Editar </th>
+        <th> Borrar </th>
     </tr>
     <?php
     // $listado es una variable asignada desde el controlador ItemsController.
@@ -28,11 +30,14 @@
     {
     ?>
     <tr>
-    <td><a href=index.php?controlador=categoria&accion=detalle&id=<?php echo $categoria['idCategoria']?>><?php echo $categoria['idCategoria']?></a></td>
+        <td><a href=index.php?controlador=categoria&accion=detalle&id=<?php echo $categoria['idCategoria']?>><?php echo $categoria['idCategoria']?></a></td>
         <td><?php echo $categoria['Nombre']?></td>
         <td><?php echo $categoria['Fecha']?></td>
         <td><?php echo $categoria['Autor']?></td>
         <td><?php echo $categoria['Estado']?></td>
+        <td><a href=index.php?controlador=categoria&accion=editar&id=<?php echo $categoria['idCategoria']?>>Editar</a></td>
+        <td><a href=index.php?controlador=categoria&accion=borrar&id=<?php echo $categoria['idCategoria']?>>Borrar</a></td>
+
     </tr>
     <?php
     }

@@ -212,5 +212,46 @@ class CategoriaController
             }       
         }
     
+
+
+
+        // BORRAR Categoría según el ID
+    public function borrar(){
+        // index.php?controlador=categoria&accion=borrar&id=33       
+            if(isset($_GET['id']))
+            {    
+                $id = $_GET['id'];                 
+    
+                     
+                // creamos un objeto del modelo CATEGORIA
+                $listado = new CategoriaModel();
+                // ejecutamos la función de CONSULTA a la BD
+                $detalle_categoria = $listado->borrar($id);                
+            
+
+                // le pasamos el resultado a la VISTA
+                $data['detalle_categoria'] = $detalle_categoria; 
+                
+                
+                //Guardamos en un array los datos a mostrar en la vista
+                $index['titulo'] = "Categoria/Borrado";
+                $index['texto'] = "Se ha eliminado correctamente";
+                //Pasamos a la vista toda la información que se desea representar
+                $data['datos'] = $index;
+                //Finalmente presentamos nuestra plantilla
+    
+                //
+            }
+            else
+            {
+                //Guardamos en un array los datos a mostrar en la vista
+                $index['titulo'] = "Categoria/Detalle";
+                $index['texto'] = "Error.. Categoría no encontrada";
+                //Pasamos a la vista toda la información que se desea representar
+                $data['datos'] = $index;  
+    
+            }         
+            $this->view->show("categorias/detalle.php", $data);        
+        }
 }
 ?>

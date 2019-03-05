@@ -66,6 +66,15 @@ class CategoriaModel
     }
 
 
+    public function borrar($id_categoria)
+    {
+        //realizamos la consulta de la Categoría con ID pasada como parámetro
+        $consulta = $this->db->prepare('DELETE FROM categorias WHERE idCategoria = :id');
+        $consulta->execute(['id' => $id_categoria]);
+     
+        //devolvemos la colección para que la vista la presente.
+        return $consulta;
+    }
 
 }
 ?>
